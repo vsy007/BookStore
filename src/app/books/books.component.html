@@ -1,0 +1,17 @@
+<app-top-bar [search] = "searchTerm" (ToBookSearch)="getSearchTerm($event)"></app-top-bar>
+<br>
+<h3 class="font-weight-bolder">POPULAR BOOKS</h3><br><hr><br>
+<div class="container-fluid">
+    <div class="row">
+        
+        <div *ngFor="let book of boooks|bookFilter:searchTerm" class="col-2">
+            <a routerLink="/details/{{book.id}}">
+                <img [src]="book.image" class="book-image">
+                <p>{{book.caption}}</p>
+            </a>
+        </div>
+
+
+    </div> 
+
+    <router-outlet></router-outlet>

@@ -1,0 +1,18 @@
+<app-top-bar></app-top-bar>
+<br>
+<div class="container-fluid">
+<h3 class="font-weight-bolder">BEST SELLERS</h3><br>
+    <div class="row">
+        
+        <div *ngFor="let book of bestBooks" class="col-2">
+            <a routerLink="/details/{{book.id}}">
+                <img [src]="book.image" class="book-image">
+                <p>{{book.caption}}</p>
+            </a>
+        </div>
+
+
+    </div> 
+</div>
+
+    <router-outlet></router-outlet>

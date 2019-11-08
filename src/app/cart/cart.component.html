@@ -1,0 +1,31 @@
+<app-top-bar></app-top-bar>
+
+<div class="container"><br><br>
+      <div class="ml-5 mr-5 jumbotron">
+            
+                 <h3>Shopping Cart</h3><br>
+                 <p class="font-weight-bolder">Cart Total(Books:{{count}}) : {{total}} Rs</p>
+                 <a routerLink="/login">
+                 <button type="button" id="changeText" class="button btn-block" >
+                       <span class="small">ORDER NOW</span></button>
+                 </a>
+
+                  <div *ngFor="let book of cartBooks" class="row">
+
+                        <div class="col-2 text-center">
+                              <hr>
+                              <img [src]="book.image" class="book-image">
+                        </div>
+
+                        <div class="col-10">
+                              <hr>
+                              <h5 class="font-weight-bold">{{book.caption}}</h5>
+                               <p class="font-weight-bold">by <i>{{book.author}}</i></p>
+                              <p class="small font-weight-bold">Price {{book.price}} Rs</p>
+                              <button (click)="onClick(book.id)" 
+                              type="button">delete</button>
+                        </div>
+
+                  </div>
+            </div>
+      </div>

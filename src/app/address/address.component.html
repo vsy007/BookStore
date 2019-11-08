@@ -1,0 +1,38 @@
+<div class="container"><br><br>
+    <h3 class="font-weight-bold">Delivary Address</h3>
+    <p class="small">When finished, click the "Ship to this address" button to proceed with your order </p>
+<form [formGroup]="addressForm" (ngSubmit)="onSubmit()">    
+        <label class="small font-weight-bold">
+          Full Name
+          <input type="text" style="width: 500px;" class="form-control" 
+          formControlName="name">
+        </label>
+        <br>
+        <label class="small font-weight-bold">
+          Pin Code:
+          <input type="text" style="width: 500px;"  class="form-control"
+           formControlName="pin" >
+        </label>
+         <br>
+        <label class="small font-weight-bold">
+          Flat, House no., Building, Apartment, Company:
+          <input type="text" style="width: 500px;" class="form-control"
+           formControlName="flat">
+        </label><br>
+        <label class="small font-weight-bold">
+            Area, Colony, Street, Sector, Village:
+         <input type="text" style="width: 500px;" class="form-control"
+             formControlName="area">
+        </label><br>
+       <label class="small font-weight-bold">
+            City & State:
+        <input type="text" style="width: 500px;" class="form-control"
+          formControlName="city">
+         </label>
+        <br><br>
+        <button type="submit"  style="background-color: dodgerblue;
+        display: inline; color: rgb(255, 255, 255);"  
+        class="btn btn-secondary" [disabled]="!addressForm.valid">Ship to this Address</button>
+      </form>  
+    
+</div>

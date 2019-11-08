@@ -1,0 +1,17 @@
+<app-top-bar></app-top-bar>
+<br>
+<h3 class="font-weight-bolder">NEW RELEASE</h3><br>
+<div class="container-fluid">
+    <div class="row">
+        
+        <div *ngFor="let book of newBooks" class="col-2">
+            <a routerLink="/details/{{book.id}}">
+                <img [src]="book.image" class="book-image">
+                <p>{{book.caption}}</p>
+            </a>
+        </div>
+
+
+    </div> 
+
+    <router-outlet></router-outlet>

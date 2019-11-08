@@ -1,0 +1,69 @@
+<div class="top">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <h1>BookStore</h1>
+            </div>
+            <div class="col-4">
+                
+            </div>
+            <div class="col-3 float-right">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                    <p>A platform to purchase books online</p>
+            </div>
+            <div class="col-5">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                      <div class="input-group-text bg-transparent border-right-0">
+                        <i style="color: dodgerblue;" class="fa fa-search"></i>
+                      </div>
+                    </span>
+                    <input class="form-control py-2 border-Right-0 border input" type="text" 
+                    placeholder="search by name..." id="example-search-input"
+                    (keyup)="searchToBooks(search)" [(ngModel)]="search"/>
+                  </div>
+            </div>
+            <div class="col-3">
+                    <a routerLink="/cart">
+                        <button class="btn btn-secondary"
+                         style="background-color: rgba(250, 246, 246, 0.993); color: black;">Cart<span style="color: dodgerblue;">
+                            {{getCartBookCount()}}</span><i class="fa fa-shopping-cart"></i></button>
+                    </a>
+                  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <div class="toptext">
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle" 
+                        type="button" data-toggle="dropdown" style="background-color:dodgerblue">Categories
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu list">
+                            <li><a href="#" style="color:black">Novels</a></li>
+                            <li><a href="#" style="color:black">Autobiographies</a></li>
+                            <li><a href="#" style="color:black">Academic</a></li>
+                            <li><a href="#" style="color:black">Guide</a></li>
+                        </ul>
+                    </div>
+                    <span class="small"><a routerLink="/best-sellers" style="color: rgba(226, 220, 220, 0.979);">Best Sellers</a></span>
+                    <span class="small"><a routerLink="/new-release" style="color: rgba(226, 220, 220, 0.979);">New Release</a></span>
+                    <span class="small"><a routerLink="/orders" style="color: rgba(226, 220, 220, 0.979);">Orders</a></span>
+                    <span class="small"><a routerLink="/book-list" style="color: rgba(226, 220, 220, 0.979);">Home</a></span>
+                    <span class="small"><a routerLink="/login" style="color: rgba(226, 220, 220, 0.979);">Sign In</a></span>
+                </div>
+
+
+            </div>
+            
+            <div class="col-3">
+        
+            </div>
+
+        </div>
+    </div>
+</div>

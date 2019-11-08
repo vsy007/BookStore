@@ -1,0 +1,22 @@
+<app-top-bar></app-top-bar>
+
+<div class="container">
+    <h3>     </h3><br><br>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-3 text-center">
+                <img [src]="book.image" class="book-image"><br><br>
+                <button type="button" id="changeText" class="button btn-block" 
+                (click)="onClick()"><span class="font-weight-bold">Add to The Cart</span></button>
+            </div>
+            <div class="col-9 font-weight-bold">
+                <h3>{{book.caption}}</h3>
+                <i> By {{book.author}}</i><br><br>
+                <p>Price: {{book.price}} Rs</p>
+                <p class="font-weight-bold">Description:<br>{{book.des}}</p>
+
+            </div>
+
+        </div>
+    </div>
+</div>

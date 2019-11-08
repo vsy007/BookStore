@@ -1,0 +1,48 @@
+<app-top-bar></app-top-bar>
+<div class="container"><br><br>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="jumbotron font-weight-bold form">
+        <h3 style="color: white;">Create Account</h3>  <br> 
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+             <div   [ngClass]="{'has-error': loginForm.get('name').errors && 
+            (loginForm.get('name').touched || loginForm.get('name').dirty)}">        
+            <label style="color: white;width: 98%" class="small font-weight-bold">
+              Name 
+              <input type="text" class="form-control small font-weight-bold" formControlName="name">
+              <span *ngIf="loginForm.get('name').errors" style="color: rgb(255, 22, 22); font-size: 11px;">
+                *Name is Required
+              </span>
+            </label>
+             </div><br>
+             <div>
+            <label style="color: white; width: 98%;" class="small font-weight-bold">
+              Mobile
+              <input type="text"  class="form-control  font-weight-bold" formControlName="mobile" >
+              <span *ngIf="loginForm.get('mobile').errors" style="color:  rgb(255, 22, 22); font-size: 11px;">
+                *Mobile number is Required
+              </span>
+            </label>
+             </div><br>
+             <div>
+            <label style="color: white; width: 98%" class="small font-weight-bold">
+              Password
+              <input type="password" class="form-control small font-weight-bold"
+               formControlName="password" placeholder="Atleast six characters">
+              <span *ngIf="loginForm.get('password').errors" style="color: rgb(255, 22, 22);font-size: 11px;">
+                *Password must be of minimum 6 characters
+              </span>
+            </label>
+             </div>
+            </div>
+            <button type="submit"  style="background-color: dodgerblue; 
+            display: inline; color: rgb(255, 255, 255);" class="btn btn-secondary"
+            [disabled]="!loginForm.valid">Submit</button>
+          </form>  
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>

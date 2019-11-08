@@ -1,0 +1,28 @@
+<app-top-bar></app-top-bar>
+
+<div class="container"><br><br>
+
+    <div class="jumbotron">
+            <h3>Ongoing Orders</h3>
+            <p class="font-weight-bold small">Order Total: {{total}}</p>
+        <div *ngFor="let book of orderBooks" class="row">
+                <div class="col-2 text-center">
+                        <hr>
+                        <img [src]="book.image" class="book-image">
+                  </div>
+
+                  <div class="col-10">
+                        <hr>
+                        <h5 class="font-weight-bold">{{book.caption}}</h5>
+                         <p class="font-weight-bold">by <i>{{book.author}}</i></p>
+                        <p class="small font-weight-bold">Price {{book.price}} Rs</p>
+                        <P class="small font-weight-bold">Arriving On: Sunday 23/12/2019</P>
+                  </div>
+
+        </div><br><hr><br>
+            <div>
+                <h4>Past Orders</h4> 
+                <p class="font-weight-bold">There are no past orders as of yet!</p>
+            </div>
+    </div>
+</div>
