@@ -13,16 +13,15 @@ import { Router } from '@angular/router'
 })
 export class SignUpComponent implements OnInit {
   signUpForm = new FormGroup({
-    mobile: new FormControl('9960130707', Validators.required),
-    password: new FormControl('vaibhav@2020', [Validators.required, Validators.minLength(6)])
+    mobile: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
-  
   constructor(private userDataService: UserDataService,
               private router: Router) { }
 
   ngOnInit() {
-  
   }
+  isCorrect: boolean;
  dataToValidation(): void{
    let mobile = this.signUpForm.value.mobile;
    let password = this.signUpForm.value.password;
@@ -30,8 +29,8 @@ export class SignUpComponent implements OnInit {
    if(isValid){
      this.router.navigate(['address']);
    }else{
-     console.warn("Mobile And/Or password is incorrect");
+    isValid=false;
+    this.isCorrect=isValid;
    }
- }
-
+ } 
 }

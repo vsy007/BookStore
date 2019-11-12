@@ -12,11 +12,11 @@ import { Validators } from '@angular/forms';
 })
 export class AddressComponent implements OnInit {
   addressForm = new FormGroup({
-    name: new FormControl('Vaibhav Yadav',  Validators.required),
-    pin: new FormControl('411 045',  Validators.required),
-    flat: new FormControl('flat no. 404, 3D building, Kul Ecoloch Society',  Validators.required),
-    area: new FormControl('Nande-Mahalunge Road, Mahalunge',  Validators.required),
-    city: new FormControl('Pune, Maharastra',  Validators.required)
+    name: new FormControl('',  [Validators.required, Validators.minLength(3)]),
+    pin: new FormControl('',  [Validators.required, Validators.minLength(6)]),
+    flat: new FormControl('',  [Validators.required, Validators.minLength(3)]),
+    area: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    city: new FormControl('',  [Validators.required, Validators.minLength(3)])
   });
   addressData: AddressDetails;
   constructor(  private router: Router,

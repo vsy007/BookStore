@@ -3,8 +3,23 @@
 <div class="container"><br><br>
 
     <div class="jumbotron">
-            <h3>Ongoing Orders</h3>
-            <p class="font-weight-bold small">Order Total: {{total}}</p>
+        <div class="row">
+            <div class="col-6">
+              <h3>Ongoing Orders</h3><br>
+              <p class="font-weight-bold">Order Total: {{total}}</p>
+              <p class="font-weight-bold">Payment Method: Cash On Delivery</p>
+            </div>
+            <div  class="col-6" *ngFor="let address of userAddress">
+                <h4>Delivering to this Address:</h4>
+                <div class="flex">
+                <p class="font-weight-bold">{{address.name}},</p>
+                <p class="font-weight-bold">{{address.flat}},</p>
+                <p class="font-weight-bold">{{address.area}},</p>
+                <p class="font-weight-bold">{{address.city}},</p>
+                <p class="font-weight-bold">{{address.pin}}.</p>
+                </div>
+            </div>
+        </div>
         <div *ngFor="let book of orderBooks" class="row">
                 <div class="col-2 text-center">
                         <hr>

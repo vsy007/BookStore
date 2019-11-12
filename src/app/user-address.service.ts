@@ -9,5 +9,9 @@ export class UserAddressService {
   fromJson(delievaryAddress: AddressDetails){
     this.userAddress.push(delievaryAddress);
   }
+
+  getData(): AddressDetails[]{
+    return this.userAddress;
+  }
   constructor() { }
 }

@@ -11,7 +11,9 @@
             <label style="color: white; width: 98%;" class="small font-weight-bold">
               Mobile
               <input type="text"  class="form-control  font-weight-bold" formControlName="mobile" >
-              <span *ngIf="signUpForm.get('mobile').errors" style="color:  rgb(255, 22, 22); font-size: 11px;">
+              <span *ngIf="signUpForm.get('mobile').errors
+               && (signUpForm.get('mobile').touched || signUpForm.get('mobile').dirty)" 
+               style="color:  rgb(255, 22, 22); font-size: 11px;">
                 *Mobile number is Required
               </span>
             </label>
@@ -21,16 +23,22 @@
               Password
               <input type="password" class="form-control small font-weight-bold"
                formControlName="password" placeholder="Atleast six characters">
-              <span *ngIf="signUpForm.get('password').errors" style="color: rgb(255, 22, 22);font-size: 11px;">
+              <span *ngIf="signUpForm.get('password').errors 
+              && (signUpForm.get('password').touched || signUpForm.get('password').dirty)" 
+              style="color: rgb(255, 22, 22);font-size: 11px;">
                 *Password must be of minimum 6 characters
               </span>
             </label>
+            <span *ngIf="isCorrect"  style="color: rgb(255, 22, 22);font-size: 11px;">
+              *mobile or password is incorrect
+            </span>
              </div>
             </div>
             <button type="submit" style="background-color: dodgerblue; 
             display: inline; color: rgb(255, 255, 255);" class="btn btn-secondary"
             [disabled]="!signUpForm.valid">Login</button><br><br>
-            <p style="color: white"> New to myBooks? <a routerLink="/register" style="color:dodgerblue"> Create Account</a></p>
+            <p style="color: white"> New to myBooks? <a routerLink="/register"
+               style="color:dodgerblue"> Create Account</a></p>
           </form>  
       </div>
     </div>

@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   loginForm = new FormGroup({
-    name: new FormControl('Vaibhav', Validators.required),
-    mobile: new FormControl('9960130707', Validators.required),
-    password: new FormControl('vaibhav@2020', [Validators.required, Validators.minLength(6)])
+    name: new FormControl('', Validators.required),
+    mobile: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
   
  
